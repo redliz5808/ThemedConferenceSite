@@ -1,0 +1,16 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web.Models;
+
+@{
+    var homePage = Umbraco.ContentAtRoot();
+    var children = homePage.First().Children().Where(x => !x.Value<bool>("umbracoNaviHide"));
+}
+
+<ul>
+    <li><a href="/">Home</a></li>
+    @foreach (var child in children)
+    {
+        <li><a href="@child.Url()">@child.Value("title")</a></li>
+    }
+</ul>
