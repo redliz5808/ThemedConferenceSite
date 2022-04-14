@@ -13,5 +13,8 @@ This is a project I am building to experiment with theming in Umbraco. I will be
 ## Sass commands to be run from any terminal:
 For complete Sass documentation [click here](https://sass-lang.com/).
 - `npm install -g sass` (installs Sass globally on your machine)
-- While inside the project folder: `sass --watch ThemedConferenceSite/SCSS/index.scss ThemedConferenceSite/CSS/index.css`
+- While inside the project folder: 
+	```
+	sass --watch ThemedConferenceSite/SCSS/index.scss ThemedConferenceSite/CSS/index.css
+	```
 	- This command must be run any time you are making changes to the application's SCSS files.
