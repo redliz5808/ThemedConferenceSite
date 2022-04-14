@@ -318,6 +318,7 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="CSS\index.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -352,12 +353,17 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\_Navigation.cshtml" />
     <Content Include="Views\NewsList.cshtml" />
+    <Content Include="SCSS\index.scss" />
+    <Content Include="SCSS\_colors\_global.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SCSS\_typography\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
