@@ -320,6 +320,7 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="CSS\index.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\themeSwitching.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -354,7 +355,12 @@
     <Content Include="Views\Partials\_Navigation.cshtml" />
     <Content Include="Views\NewsList.cshtml" />
     <Content Include="SCSS\index.scss" />
-    <Content Include="SCSS\_colors\_global.scss" />
+    <Content Include="SCSS\_variables\_globalColors.scss" />
+    <Content Include="SCSS\_navigation\_navLinks.scss" />
+    <Content Include="SCSS\_navigation\_themeToggle.scss" />
+    <Content Include="SCSS\_home\_homePage.scss" />
+    <Content Include="SCSS\_news\_newsList.scss" />
+    <Content Include="SCSS\_variables\_breakpoints.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,10 +7,20 @@
     var children = homePage.First().Children().Where(x => !x.Value<bool>("umbracoNaviHide"));
 }
 
-<ul>
-    <li><a href="/">Home</a></li>
-    @foreach (var child in children)
-    {
-        <li><a href="@child.Url()">@child.Value("title")</a></li>
-    }
-</ul>
+<div class="container-fluid my-3 navBar">
+    <div class="row">
+        <div class="col-8">
+            <ul>
+                <li><a href="/">Home</a></li>
+                @foreach (var child in children)
+                {
+                    <li><a href="@child.Url()">@child.Value("title")</a></li>
+                }
+            </ul>
+        </div>
+        <div class="toggle-container col-4">
+            <p>Toggle Theme</p>
+            <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle Theme</label>
+        </div>
+    </div>
+</div>

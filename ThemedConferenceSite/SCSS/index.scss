@@ -1,5 +1,42 @@
-﻿@import "_colors/_global.scss";
+﻿@import "_variables/_globalColors.scss";
+@import "_variables/_breakpoints.scss";
 
-body {
-    background-color: $tan;
+html {
+    body {
+        background-color: $tan;
+        color: $brown;
+    }
+
+    a {
+        text-decoration: none;
+        color: $darkGreen;
+        padding: 0rem 0.5rem 0.1rem 0.5rem;
+    }
+
+    a:hover {
+        color: $midGreen;
+        border-bottom: 2px solid $darkGreen;
+    }
+
 }
+
+html[data-theme="contrast"] {
+    body {
+        background-color: $brownGray;
+        color: $white;
+    }
+
+    a {
+        color: $lightGreenGray;
+    }
+
+    a:hover {
+        color: $midGreenGray;
+        border-bottom: 2px solid $lightGreenGray;
+    }
+}
+
+@import "_navigation/_themeToggle.scss";
+@import "_navigation/_navLinks.scss";
+@import "_home/_homePage.scss";
+@import "_news/_newsList.scss";

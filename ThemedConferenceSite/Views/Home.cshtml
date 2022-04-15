@@ -2,8 +2,10 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
-<h1>@Model.Value("title")</h1>
-@Html.Partial("~/Views/Partials/_HomePageBanner.cshtml")
+<div class="container-fluid homePage">
+    <h1>@Model.Value("title")</h1>
+    @Html.Partial("~/Views/Partials/_HomePageBanner.cshtml")
+</div>
