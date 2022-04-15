@@ -1,26 +1,42 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using Umbraco.Web.Models;
+@using Umbraco.Core.Models;
+
 @{
     Layout = "Master.cshtml";
-    var children = Model.Children().Where(x => !x.Value<bool>("umbracoNaviHide"));
+    var children = Model.Children().Where(x => !x.Value<bool>("umbracoNaviHide")).OrderByDescending(x => x.Value("articleDate"));
 }
 
-<h1>News</h1>
-<ul>
-    @foreach (var child in children)
-    {
-        var articleImage = child.Value<IPublishedContent>("articleImage");
-        var articleLinks = child.Value<IEnumerable<Link>>("articleLink");
-        <li>
-            <img src="@articleImage.Url()" alt="@child.Value("articleImageAltText")" />
-            <h2>@child.Value("articleTitle")</h2>
-            <h6>@child.Value("articleDate")</h6>
-            <h3>@child.Value("articleAuthor")</h3>
-            <p>@child.Value("articleDescription")</p>
-            @if (articleLinks.Any())
-            {
-                <a href="@articleLinks.First().Url" target="@articleLinks.First().Target">View Now</a>
-            }
-        </li>
-    }
-</ul>
+<div class="container-fluid newsList">
+    <div class="row">
+        <div class="col-12">
+            <h1>News</h1>
+        </div>
+        <div class="col-12">
+            <ul class="row">
+                @foreach (var child in children)
+                {
+                    var articleImage = child.Value<IPublishedContent>("articleImage");
+                    var articleLinks = child.Value<IEnumerable<Link>>("articleLink");
+
+                    var croppedImage = child.Value<IPublishedContent>("articleImage") as MediaWithCrops;
+                    var croppedImageUrl = croppedImage.GetCropUrl("thumbnail");
+
+                    <li class="col-12 col-lg-4 px-3 my-3 newsListItem">
+                        <img src="@croppedImageUrl" alt="@child.Value("articleImageAltText")" class="img-fluid" />
+                        <div class="content text-center my-3">
+                            <h2>@child.Value("articleTitle")<span class="article-author"> by @child.Value("articleAuthor")</span></h2>
+                            <p class="small">@(child.Value<DateTime>("articleDate").ToString("MMMM d, yyyy"))</p>
+                            <p class="text-start">@child.Value("articleDescription")</p>
+                        </div>
+                        @if (articleLinks.Any())
+                        {
+                            <a href="@articleLinks.First().Url" target="@articleLinks.First().Target">View Now</a>
+                        }
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿.newsList {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .newsListItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .article-author {
+                font-size: 1.5rem;
+                font-style: italic;
+            }
+            
+            img {
+                /*max-height: 200px;*/
+                border-radius: 1rem;
+                box-shadow: 2px 2px 10px #00000040;
+            }
+
+            .content {
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: $lgDesktop) {
+    .newsList {
+        ul {
+            .newsListItem {
+                border-bottom: 1px solid $lightGreen;
+
+                a {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+
+    html[data-theme="contrast"] {
+        .newsList {
+            ul {
+                .newsListItem {
+                    border-bottom: 1px solid $lightGreenGray;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,152 @@
-body {
+/* Standard Colors */
+/* Contrast Colors */
+html body {
   background-color: #E2D8CB;
+  color: #582F0E;
+}
+html a {
+  text-decoration: none;
+  color: #333D29;
+  padding: 0rem 0.5rem 0.1rem 0.5rem;
+}
+html a:hover {
+  color: #656D4A;
+  border-bottom: 2px solid #333D29;
+}
+
+html[data-theme=contrast] body {
+  background-color: #373737;
+  color: #fff;
+}
+html[data-theme=contrast] a {
+  color: #C1C1C1;
+}
+html[data-theme=contrast] a:hover {
+  color: #666;
+  border-bottom: 2px solid #C1C1C1;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  /* Dicatates all over values */
+  height: 26px;
+  /* Must be half the label width, but also even */
+  background: #582F0E;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  /* Must be about 42-45% the label width */
+  height: 20px;
+  /* Must match label:after width */
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #C1C1C1;
+}
+
+input:checked + label:after {
+  left: calc(100% - 3px);
+  /* px portion of calculation must match label:after left */
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 32px;
+  /* Should be 65% the label width, but can be modified to taste 
+      (is the stretch animation when toggle is clicked) */
+}
+
+.navBar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  font-size: 1.4rem;
+}
+.navBar .toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.navBar .toggle-container p {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.homePage * {
+  text-align: center;
+}
+.homePage .homePageBanner {
+  margin-top: 1.5rem;
+}
+.homePage .homePageBanner img {
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2509803922);
+}
+
+.newsList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.newsList ul .newsListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsList ul .newsListItem .article-author {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.newsList ul .newsListItem img {
+  /*max-height: 200px;*/
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2509803922);
+}
+.newsList ul .newsListItem .content {
+  max-width: 80%;
+}
+
+@media (max-width: 1400px) {
+  .newsList ul .newsListItem {
+    border-bottom: 1px solid #C2C5AA;
+  }
+  .newsList ul .newsListItem a {
+    margin-bottom: 12px;
+  }
+
+  html[data-theme=contrast] .newsList ul .newsListItem {
+    border-bottom: 1px solid #C1C1C1;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

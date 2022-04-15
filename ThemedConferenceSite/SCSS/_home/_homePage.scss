@@ -1,0 +1,20 @@
+﻿.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    * {
+        text-align: center;
+    }
+
+    .homePageBanner {
+        margin-top: 1.5rem;
+
+        img {
+            border-radius: 1rem;
+            box-shadow: 2px 2px 10px #00000040;
+        }
+    }
+}

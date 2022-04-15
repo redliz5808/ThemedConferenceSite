@@ -1,0 +1,43 @@
+﻿input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px; /* Dicatates all over values */
+    height: 26px; /* Must be half the label width, but also even */
+    background: $brown;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px; /* Must be about 42-45% the label width */
+    height: 20px; /* Must match label:after width */
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background: $lightGreenGray;
+}
+
+input:checked + label:after {
+    left: calc(100% - 3px); /* px portion of calculation must match label:after left */
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 32px; 
+    /* Should be 65% the label width, but can be modified to taste 
+        (is the stretch animation when toggle is clicked) */
+}
