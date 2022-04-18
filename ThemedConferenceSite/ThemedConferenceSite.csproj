@@ -321,6 +321,7 @@
     <Content Include="CSS\index.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\themeSwitching.js" />
+    <Content Include="Scripts\themeSwitchingInUrl.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

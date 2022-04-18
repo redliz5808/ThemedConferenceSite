@@ -9,7 +9,7 @@ label {
     text-indent: -9999px;
     width: 50px; /* Dicatates all over values */
     height: 26px; /* Must be half the label width, but also even */
-    background: $brown;
+    background: $grytGray; /* Color when toggle is turned off */
     display: block;
     border-radius: 100px;
     position: relative;
@@ -28,7 +28,7 @@ label:after {
 }
 
 input:checked + label {
-    background: $lightGreenGray;
+    background: $grytPurple; /* Color when toggle is turned on */
 }
 
 input:checked + label:after {
