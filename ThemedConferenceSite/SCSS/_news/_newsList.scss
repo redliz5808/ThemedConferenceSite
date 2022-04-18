@@ -31,7 +31,7 @@
     .newsList {
         ul {
             .newsListItem {
-                border-bottom: 1px solid $lightGreen;
+                border-bottom: 1px solid $grytGray;
 
                 a {
                     margin-bottom: 12px;
@@ -40,11 +40,11 @@
         }
     }
 
-    html[data-theme="contrast"] {
+    body[data-theme="contrast"] {
         .newsList {
             ul {
                 .newsListItem {
-                    border-bottom: 1px solid $lightGreenGray;
+                    border-bottom: 1px solid $grytOrange;
                 }
             }
         }

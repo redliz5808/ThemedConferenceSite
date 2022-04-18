@@ -1,14 +1,29 @@
 ﻿$(document).ready(() => {
     const checkbox = $(":input[name=theme]");
-    const html = $("html");
+    const body = $("body");
+    let currentTheme = localStorage.getItem("currentTheme");
+
+    if (currentTheme == null) {
+        localStorage.setItem("currentTheme", "standard");
+        currentTheme = "standard";
+    } else {
+        localStorage.setItem("currentTheme", currentTheme);
+        body.attr("data-theme", currentTheme);
+    }
+
+    if (currentTheme == "contrast") {
+        checkbox.prop("checked", true);
+    }
 
     checkbox.change(() => {
-        if (checkbox.is(":checked")) {
-            console.log("contrast");
-            html.attr("data-theme", "contrast");
+        currentTheme = localStorage.getItem("currentTheme");
+
+        if (currentTheme == "standard") {
+            body.attr("data-theme", "contrast");
+            localStorage.setItem("currentTheme", "contrast");
         } else {
-            console.log("standard");
-            html.attr("data-theme", "standard");
+            body.attr("data-theme", "standard");
+            localStorage.setItem("currentTheme", "standard");
         }
-    })
+    });
 });

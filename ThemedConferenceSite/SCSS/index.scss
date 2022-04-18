@@ -1,38 +1,32 @@
 ﻿@import "_variables/_globalColors.scss";
 @import "_variables/_breakpoints.scss";
 
-html {
-    body {
-        background-color: $tan;
-        color: $brown;
-    }
+body {
+    background-color: $grytTeal;
+    color: $grytPink;
 
     a {
         text-decoration: none;
-        color: $darkGreen;
+        color: $grytBlue;
         padding: 0rem 0.5rem 0.1rem 0.5rem;
     }
 
     a:hover {
-        color: $midGreen;
-        border-bottom: 2px solid $darkGreen;
+        color: $grytTeal;
+        border-bottom: 2px solid $grytBlue;
     }
 
 }
 
-html[data-theme="contrast"] {
-    body {
-        background-color: $brownGray;
-        color: $white;
-    }
-
-    a {
-        color: $lightGreenGray;
-    }
+body[data-theme="contrast"] {
+    background-color: $white;
+    color: $grytPurple;
+    font-size: 1.5rem;
 
     a:hover {
-        color: $midGreenGray;
-        border-bottom: 2px solid $lightGreenGray;
+        background-color: $grytBlue;
+        color: $white;
+        border-radius: 1rem;
     }
 }
 
