@@ -4,6 +4,7 @@ This is a project I am building to experiment with theming in Umbraco. I will be
 - [x] Implement and use Sass in place of standard CSS.
 - [x] Use Sass variables to dictate the color scheme used by the website.
 - [x] Implement a toggle in the navigation of the site that, when switched, will turn on or off a color scheme that is user-friendly for those that are visually impaired.
+- [ ] Gain more backend knowledge to implement the features correctly.
 
 ## Notes about development environment:
 - The site is being built with Umbraco v8.
