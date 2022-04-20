@@ -1,14 +1,18 @@
 ﻿$(document).ready(() => {
     const checkbox = $(":input[name=theme]");
     const body = $("body");
+    //const fieldToUpdate = $("#currentTheme");
     let currentTheme = localStorage.getItem("currentTheme");
 
     if (currentTheme == null) {
-        localStorage.setItem("currentTheme", "standard");
         currentTheme = "standard";
+        localStorage.setItem("currentTheme", currentTheme);
+        body.attr("data-theme", currentTheme);
+        //fieldToUpdate.text(currentTheme);
     } else {
         localStorage.setItem("currentTheme", currentTheme);
         body.attr("data-theme", currentTheme);
+        //fieldToUpdate.text(currentTheme);
     }
 
     if (currentTheme == "contrast") {
@@ -21,9 +25,11 @@
         if (currentTheme == "standard") {
             body.attr("data-theme", "contrast");
             localStorage.setItem("currentTheme", "contrast");
+            //fieldToUpdate.text(currentTheme);
         } else {
             body.attr("data-theme", "standard");
             localStorage.setItem("currentTheme", "standard");
+            //fieldToUpdate.text(currentTheme);
         }
     });
 });

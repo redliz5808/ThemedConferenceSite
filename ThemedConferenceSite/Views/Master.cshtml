@@ -15,13 +15,13 @@
     
 </head>
 @{ 
-    var selectedTheme = Request.QueryString["theme"];
-    var currentTheme = selectedTheme != null ? selectedTheme : "standard";
+    //var selectedTheme = Request.QueryString["theme"];
+    //var currentTheme = selectedTheme != null ? selectedTheme : "standard";
 }
-<body data-theme=@currentTheme>
-    @selectedTheme
+<body data-theme="standard">
+    @*<p id="currentTheme" hidden>@currentTheme</p>*@
     <nav>
-        @Html.Partial("~/Views/Partials/_Navigation.cshtml")
+        @Html.Partial("~/Views/Partials/_Navigation.cshtml"@*, new ViewDataDictionary { { "currentTheme", currentTheme } }*@)
     </nav>
     <div>
         @RenderBody()
@@ -34,7 +34,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom Scripts -->
-    @*<script src="~/Scripts/themeSwitching.js"></script>*@
-    <script src="~/Scripts/themeSwitchingInUrl.js"></script>
+    <script src="~/Scripts/themeSwitching.js"></script>
+    @*<script src="~/Scripts/themeSwitchingInUrl.js"></script>*@
 </body>
 </html>

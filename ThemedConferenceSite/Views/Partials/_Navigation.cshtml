@@ -5,6 +5,7 @@
 @{
     var homePage = Umbraco.ContentAtRoot();
     var children = homePage.First().Children().Where(x => !x.Value<bool>("umbracoNaviHide"));
+    //var isChecked = ViewData["currentTheme"].ToString() == "contrast";
 }
 
 <div class="container-fluid my-3 navBar">
@@ -21,6 +22,14 @@
         <div class="toggle-container col-4">
             <p><img src="~/Media/tr1nfcui/accessibility.svg" height="30px" width="30px" alt="Accessibility Toggle"/></p>
             <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle Theme</label>
+            @*@if(isChecked) 
+            {
+                <input type="checkbox" id="switch" name="theme" checked /><label for="switch">Toggle Theme</label>
+            }
+            else
+            {
+                <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle Theme</label>
+            }*@
         </div>
     </div>
 </div>
